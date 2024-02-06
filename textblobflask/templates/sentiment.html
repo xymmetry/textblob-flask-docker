@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <form class="form" action="/" method="post">
+        <label for="text">Enter Text:</label><br>
+        <textarea id="text" name="text"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="result">
+    {% if text %}
+    <p>Input Text: {{ text }}</p>
+    <p>Sentiment: {{ sentiment.face }}</p>
+    <p>Polarity: {{ sentiment.polarity }}</p>
+    {% endif %}
+    </div>
+    <br>
+    Website by: Marc David
+</body>
+</html>
+
